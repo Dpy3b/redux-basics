@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
 	<React.StrictMode>
-		<Provider store={store}> {/* оборачиваем наше приложение в провайдер, он будет прокидывать через store в компоненты наше состояние */}
+		<Provider store={store}>
 			<App />
 		</Provider>
 	</React.StrictMode>
