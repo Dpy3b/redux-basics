@@ -10,4 +10,5 @@ button {
   border-radius: 15px;
   outline: none;
   border: 1px solid crimson;
+  cursor: pointer;
 }
