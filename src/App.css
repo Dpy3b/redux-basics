@@ -1,14 +1,74 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
-button {
-  padding: 5px 15px;
-  font-size: 15px;
-  font-family: 'JetBrains Mono';
-  background-color: lightcoral;
-  border-radius: 15px;
-  outline: none;
-  border: 1px solid crimson;
-  cursor: pointer;
+.button {
+	padding: 5px 15px;
+	font-size: 15px;
+	font-family: 'JetBrains Mono';
+	background-color: lightcoral;
+	border-radius: 15px;
+	outline: none;
+	border: 1px solid crimson;
+	cursor: pointer;
+}
+
+.saga-parent {
+	width: 100vw;
+	min-height: 100vh;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.btns {
+	display: flex;
+	width: 100vw;
+	height: 10vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn {
+	height: fit-content;
+	padding: 10px 20px;
+	margin-left: 10px;
+	border: none;
+	border-radius: 4px;
+	background-color: teal;
+	color: white;
+	font-weight: 500;
+	font-size: 1.2rem;
+	box-shadow: 4px 4px 8px gray;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+.btn:focus {
+	outline: none;
+}
+.btn:hover {
+	box-shadow: 4px 4px 18px gray;
+}
+.count {
+	display: flex;
+	justify-content: center;
+	height: 20vh;
+	align-items: center;
+	font-size: 3rem;
+}
+
+.users {
+	margin-top: 5%;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.user {
+	width: 20%;
+	border-radius: 3px;
+	border: 1px solid teal;
+	margin-top: 10px;
+	padding: 10px;
+	font-size: 1.4rem;
 }

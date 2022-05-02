@@ -3,7 +3,9 @@ import './App.css';
 //import { createStore } from 'redux';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCustomerAction, removeCustomerAction } from './store/customerReducer';
-
+import { fetchCustomers } from './acyncActions/customers';
+import "./test"
+import SagaTest from './components/SagaTest';
 //let action = { type: '', payload: '' }; // пример этого объекта, обязательные два поля type (определяем по нему (по типу), как состояние будет изменяться в редюсере через свич/кейс) и поле payload - в нем храним данные которые будем изменять
 
 // объект (может быть массив/примитив, что угодно) с состоянием - хранит в себе данные (любого типа) которые могут изменяться
@@ -46,7 +48,7 @@ function App() {
 			<h1>Redux basics</h1>
 			<div style={{ fontSize: '20px', marginBottom: '20px' }}>{cash}</div>
 			<div style={{ display: 'flex', justifyContent: 'center' }}>
-				<button
+				<button className='button'
 					onClick={() =>
 						addCash(Number(prompt('Введите сумму для пополнения')))
 					}
@@ -54,17 +56,18 @@ function App() {
 					Пополнить счёт
 				</button>
 				{/* // при клике вызываем функцию */}
-				<button
+				<button className='button'
 					onClick={() => getCash(Number(prompt('Введите сумму для снятия')))}
 				>
 					Снять со счёта
 				</button>
 				{/* // при клике вызываем функцию */}
-				<button onClick={() => addCustomer(prompt('Введите имя клиента'))}>
+				<button className='button' onClick={() => addCustomer(prompt('Введите имя клиента'))}>
 					Добавить клиента
 				</button>
-				<button>
-					Удалить клиента
+				{/* при нажатии обрабатываем ту асинхронную функцию через диспатч */}
+				<button className='button' onClick={()=> dispatch(fetchCustomers())}>
+					Получить клиентов из базы
 				</button>
 			</div>
 
@@ -79,6 +82,7 @@ function App() {
 			) : (
 				<div style={{ fontSize: '20px' }}>Клиенты отсутствуют!</div>
 			)}
+			<SagaTest/>
 		</div>
 	);
 }
