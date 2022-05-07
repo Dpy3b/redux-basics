@@ -42,6 +42,6 @@ const rootReducer = combineReducers({
 	customers: customerReducer,
 });
 
-export const store = legacy_createStore(rootReducer, applyMiddleware(sagaMiddleware));
+export const store = legacy_createStore(rootReducer, applyMiddleware(sagaMiddleware)); // наш пример на санках не работает, т.к. в applyMiddleware мы передали миддлвеер саги, а не санок
 
 sagaMiddleware.run(rootWatcher); // запускаем сагу методов run, параметром передаем тот самый вотчер
