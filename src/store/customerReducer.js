@@ -1,11 +1,12 @@
 const defaultState = {
-	customers: [],
+	customers: [], // здесь же именуется переменная которую потом получаем через useSelector
 };
 
-// ниже офигенно хорошая практика, чтобы не ошибиться в этих типах
+// ниже офигенно хорошая практика, выносить названия экшнов в константы чтобы не ошибиться в этих типах
 const ADD_CUSTOMER = 'ADD_CUSTOMER';
 const REMOVE_CUSTOMER = 'REMOVE_CUSTOMER';
 const ADD_MANY_CUSTOMERS = 'ADD_MANY_CUSTOMERS';
+
 export const customerReducer = (state = defaultState, action) => {
 	switch (action.type) {
 		case ADD_MANY_CUSTOMERS:
@@ -16,9 +17,7 @@ export const customerReducer = (state = defaultState, action) => {
 		case REMOVE_CUSTOMER:
 			return {
 				...state,
-				customers: state.customers.filter(
-					customer => customer.id !== action.payload
-				),
+				customers: state.customers.filter(customer => customer.id !== action.payload),
 			}; //возвращаем только те объекты, для которых коллбек возвращает true, т.е. если айди клиента = тому айдишнику который мы будем передавать как payload, то он не попадет в массив
 		default:
 			return state;
@@ -32,7 +31,6 @@ export const addManyCustomersAction = payload => ({
 	type: ADD_MANY_CUSTOMERS,
 	payload,
 });
-
 export const removeCustomerAction = payload => ({
 	type: REMOVE_CUSTOMER,
 	payload,

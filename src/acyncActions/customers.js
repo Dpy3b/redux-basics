@@ -1,7 +1,9 @@
 import { addManyCustomersAction } from '../store/customerReducer';
 
+// создаем тут запросы к внешнему апи
 // чтобы мы могли потом использовать эту функцию как action (т.е. прокидывать её в диспатч), мы из этой функции должны вернуть новую функцию которая параметром принимает диспатч!
 export const fetchCustomers = () => {
+	// мы получаем параметр диспатч в возвращаемую функциб при ее вызове в dispatch(fetchCustomers()) в App.jsx с помощью redux-thunk
 	return function (dispatch) {
 		fetch('https://jsonplaceholder.typicode.com/users')
 			.then(response => response.json()) // массив пользователей, который пришёл от сервера

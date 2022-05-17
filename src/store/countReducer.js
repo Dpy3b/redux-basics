@@ -14,7 +14,7 @@ export default function countReducer(state = defaultState, action) {
 		case DECREMENT:
 			return { ...state, count: state.count - 1 };
 	}
-	return state;
+	return state; // если нам прилетел экшн с типом, который мы не обрабатываем ни в каком кейсе, то возвращаем состояние неизмененным
 }
 
 // наши экшн криэйторы, функции, которые возрващают объекты экшны

@@ -8,7 +8,7 @@ export const FETCH_USERS = 'FETCH_USERS';
 export default function userReducer(state = defaultState, action) {
 	switch (action.type) {
 		case SET_USERS:
-			return { ...state, users: action.payload };
+			return { ...state, users: action.payload }; // либо по рофлу получать их заново и добавлять одинаковые массивы друг к другу: { ...state, users: [...state.users, ...action.payload] }
 	}
 	return state;
 }

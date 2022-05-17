@@ -9,7 +9,7 @@ import {
 } from '../store/countReducer';
 import { fetchUsers } from '../store/userReducer';
 
-const SagaTest = () => {
+const ReduxWithReduxSaga = () => {
 	const count = useSelector(state => state.countReducer.count);
 	const users = useSelector(state => state.userReducer.users);
 	const dispatch = useDispatch();
@@ -43,4 +43,4 @@ const SagaTest = () => {
 	);
 };
 
-export default SagaTest;
+export default ReduxWithReduxSaga;
